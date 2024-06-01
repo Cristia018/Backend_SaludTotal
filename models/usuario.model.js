@@ -1,4 +1,4 @@
-import { sequelize } from "../db/dbConnection";
+import { sequelize } from "../db/dbConnection.js";
 import { DataTypes } from "sequelize";
 
 const user = sequelize.define('Usuario', {
@@ -11,7 +11,10 @@ const user = sequelize.define('Usuario', {
     rol: {
         type: DataTypes.INTEGER,
         references: {
-            
+            model: 'rol',
+            key: 'id'
         }
     }
-})
+}, {tableName:'usuario', createdAt:false, updatedAt:false})
+
+export default user

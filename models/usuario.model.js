@@ -1,7 +1,7 @@
 import { sequelize } from "../db/dbConnection.js";
 import { DataTypes } from "sequelize";
 
-const user = sequelize.define('Usuario', {
+const usuario = sequelize.define('usuario', {
     correo: {
         type: DataTypes.STRING
     },
@@ -17,4 +17,4 @@ const user = sequelize.define('Usuario', {
     }
 }, {tableName:'usuario', createdAt:false, updatedAt:false})
 
-export default user
+export default usuario

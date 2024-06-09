@@ -3,7 +3,8 @@ import { DataTypes } from "sequelize";
 
 const usuario = sequelize.define('usuario', {
     correo: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING, 
+        unique:true
     },
     clave: {
         type: DataTypes.STRING

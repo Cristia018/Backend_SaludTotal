@@ -1,5 +1,6 @@
 import { sequelize } from "../db/dbConnection.js";
 import { DataTypes } from "sequelize";
+import Usuario from './usuario.model.js'
 
 const paciente = sequelize.define('paciente', {
     nombre: {
@@ -15,7 +16,8 @@ const paciente = sequelize.define('paciente', {
         type: DataTypes.STRING
     },
     eps: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        defaultValue: "SaludTotal"
     },
     usuario: {
         type: DataTypes.INTEGER,

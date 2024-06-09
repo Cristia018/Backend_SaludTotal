@@ -3,7 +3,8 @@ import { DataTypes } from "sequelize";
 
 const citas = sequelize.define('citas', {
     estado: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
+        defaultValue: "pendiente"
     },
     fecha_destino: {
         type: DataTypes.DATE
@@ -20,7 +21,8 @@ const citas = sequelize.define('citas', {
         references: {
             model: 'especialidad',
             key: 'id'
-        }
+        },
+        defaultValue: 1
     }
 }, {
     tableName: 'citas',

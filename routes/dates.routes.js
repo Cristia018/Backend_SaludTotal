@@ -1,8 +1,12 @@
 import {Router} from 'express'
-import {postDate} from '../controllers/dates.controller.js'
+import {getDates, getPendingDatesByPatient, postDate} from '../controllers/dates.controller.js'
 
 const router = Router()
 
 router.post('/', postDate)
+
+router.get('/all', getDates)
+
+router.get('/', getPendingDatesByPatient)
 
 export default router

@@ -8,6 +8,7 @@ import Turnos from './turnos.model.js'
 import Usuario from './usuario.model.js'
 
 Paciente.belongsTo(Usuario, { foreignKey: 'usuario', as: 'user' });
+Citas.belongsTo(Especialidad, { foreignKey: 'especialidad', as: 'espec'})
 
 export {
     Paciente,

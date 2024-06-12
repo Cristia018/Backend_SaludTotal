@@ -18,7 +18,7 @@ export const logIn = async (req, res) => {
     }
 
 
-    return res.json({ message: 'Autenticación exitosa', auth: true, user: {...usuario, idPaciente: paciente.id} });
+    return res.json({ message: 'Autenticación exitosa', auth: true, user: {...usuario.dataValues, idPaciente: paciente.id} });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Error en el servidor', auth: false });
@@ -43,7 +43,7 @@ export const register = async (req, res) => {
       nombre, direccion, ndocumento, telefono, usuario: nuevoUsuario.id
     })
 
-    res.status(201).json({ message: 'Usuario creado exitosamente', user: {...nuevoUsuario, idPaciente: nuevoPaciente.id} });
+    res.status(201).json({ message: 'Usuario creado exitosamente', user: {...nuevoUsuario.dataValues, idPaciente: nuevoPaciente.id} });
   } catch (error) {
     console.error('Error al crear usuario:', error);
     res.status(500).json({ error: 'Error en el servidor' });
